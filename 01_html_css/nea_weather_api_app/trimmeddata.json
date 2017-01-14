@@ -1,0 +1,16 @@
+{
+  "main":{
+    "title":"24 Hour Forecast",
+    "forecastIssue":{
+      "date":"12-01-2017",
+      "time":"11:01 PM"
+    },
+    "temperature":{
+      "high":"33",
+      "low":"24",
+      "unit":"Degrees Celsius"
+    },
+    "wxmain":"TL",
+    "forecast":"Thundery showers mainly over southern and western Singapore in the predawn hours and early morning.",
+  }
+}

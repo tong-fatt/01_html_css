@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NEA weather API app</title>
+
+	<style type="text/css">
+		html{
+			min-height: 100%;
+		}
+		body{
+			background-size: cover;
+			background-repeat: no-repeat;
+			min-height: 100%;
+		}
+		#forecast-id{
+			font-family: sans-serif;
+			font-size: 7rem;
+			font-weight: 100;
+		}
+	</style>
+
+</head>
+<body>
+
+<h1 id="forecast-id"></h1>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.xml2json/1.2/jquery.xml2json.js"></script>
+<script type="text/javascript">
+
+// extrapolated from: https://www.nea.gov.sg/docs/default-source/api/developer's-guide.pdf
+var rainy = ["BR", "DR", "HG", "HR", "HS", "HT", "LR", "LS", "PS", "RA", "SH", "SN", "SR", "SS", "TL", "WR", "WS"];
+var cloudy = ["CL", "FG", "HZ", "LH", "OC", "PC", "PN", "SW", "WC", "WD", "WF"];
+var sunny = ["FA", "FN", "FW", "SU"];
+// sunny[0] == "FA"
+// sunny[3] == "SU"
+
+var rainyUrl = "url(http://sparklequotes.com/wp-content/uploads/2016/10/Rain-Status-2.jpg)";
+var cloudyUrl = "url(https://static.pexels.com/photos/39811/pexels-photo-39811.jpeg)";
+var sunnyUrl = "url(https://youtechassociates.com/wp-content/uploads/2016/03/amazing-sunny-day-wallpaper-1.jpg)";
+
+//http://api.jquery.com/jquery.ajax/
+$.ajax({
+    url: 'http://api.nea.gov.sg/api/WebAPI/?dataset=24hrs_forecast&keyref=781CF461BB6606AD814EFA58445F9F5FBEDF1BD98D74F1E9',
+    dataType: 'xml',
+    success: function(response) {
+        var json = $.xml2json(response);
+        
+        var weather = json.main.wxmain;
+        console.log(weather);
+
+        for(var i in rainy){
+        	console.log("i:" + i + " / value:" + rainy[i]);
+        	if(weather == rainy[i]){
+        		$('body').css('background-image', rainyUrl);
+        	}
+        }
+
+        for(var i in cloudy){
+        	if(weather == cloudy[i]){
+        		$('body').css('background-image', cloudyUrl);
+        	}
+        }
+
+        for(var i in sunny){
+        	if(weather == sunny[i]){
+        		$('body').css('background-image', sunnyUrl);
+        	}
+        }
+
+        var forecast = json.main.forecast;
+        console.log(forecast);
+        $('#forecast-id').html(forecast);
+    }
+});
+</script>
+</body>
+</html>

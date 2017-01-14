@@ -1,0 +1,61 @@
+{
+  "title":"Singapore - Nowcast and Forecast",
+  "source":"Meteorological Service Singapore",
+  "main":{
+    "title":"24 Hour Forecast",
+    "forecastIssue":{
+      "date":"12-01-2017",
+      "time":"11:01 PM"
+    },
+    "validTime":"12 AM 13 Jan - 12 AM 13 Jan",
+    "temperature":{
+      "high":"33",
+      "low":"24",
+      "unit":"Degrees Celsius"
+    },
+    "relativeHumidity":{
+      "high":"95",
+      "low":"55",
+      "unit":"Percentage"
+    },
+    "wind":{
+      "direction":"NW",
+      "speed":"10 - 25"
+    },
+    "wxmain":"TL",
+    "forecast":"Thundery showers mainly over southern and western Singapore in the predawn hours and early morning.",
+    "pastweather":"Nil"
+  },
+  "night":{
+    "timePeriod":"Midnight to 6 am 13 Jan",
+    "wxeast":"PN",
+    "wxwest":"TL",
+    "wxnorth":"PN",
+    "wxsouth":"TL",
+    "wxcentral":"PN"
+  },
+  "morn":{
+    "timePeriod":"6 am to Midday 13 Jan",
+    "wxeast":"PC",
+    "wxwest":"TL",
+    "wxnorth":"PC",
+    "wxsouth":"TL",
+    "wxcentral":"PC"
+  },
+  "afternoon":{
+    "timePeriod":"Midday to 6 pm 13 Jan",
+    "wxeast":"PC",
+    "wxwest":"PC",
+    "wxnorth":"PC",
+    "wxsouth":"PC",
+    "wxcentral":"PC"
+  },
+  "nextnight":{
+    "timePeriod":"6 pm to Midnight 13 Jan",
+    "wxeast":"PN",
+    "wxwest":"PN",
+    "wxnorth":"PN",
+    "wxsouth":"PN",
+    "wxcentral":"PN"
+  }
+}
