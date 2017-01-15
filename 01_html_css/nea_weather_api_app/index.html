@@ -47,6 +47,7 @@ $.ajax({
         var json = $.xml2json(response);
         
         var weather = json.main.wxmain;
+        // weather = "FA"
         console.log(weather);
 
         for(var i in rainy){

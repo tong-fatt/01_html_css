@@ -13,7 +13,7 @@ $.ajax({
 
 		var rainyUrl = "url(http://sparklequotes.com/wp-content/uploads/2016/10/Rain-Status-2.jpg)";
 		var cloudyUrl = "url(https://static.pexels.com/photos/39811/pexels-photo-39811.jpeg)";
-		var sunnyUrl = "http://wallpapercave.com/wp/l9WDprr.jpg)";
+		var sunnyUrl = "https://youtechassociates.com/wp-content/uploads/2016/03/amazing-sunny-day-wallpaper-1.jpg))";
 
 		var json = $.xml2json(response);
 		console.log(json);
@@ -25,7 +25,7 @@ $.ajax({
 		$('#forecast-id').html(forecast);
 
 		var weather = json.main.wxmain;
-		var weather = "FA"; 
+		// var weather = "FA"; 
 		console.log(weather);
 
 
@@ -35,16 +35,16 @@ $.ajax({
 				console.log("it's rainy");
 				$('body').css('background-image', rainyUrl);
 
-			}
+			}}
 		for(var i in sunny) {
 
 			if(sunny[i] == weather){
 					console.log("it is sunny");
 					$('body').css('background-image', sunnyUrl);
-			}
-		}
-		}
+			}}
+		
+		
 
 
-	}
-});
+	} }
+);
